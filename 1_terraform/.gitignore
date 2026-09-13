@@ -1,0 +1,55 @@
+# =========================================================================
+# 1. TERRAFORM STATE & SECRETS (CRITICAL SECURITY)
+# =========================================================================
+# Local state files contain unencrypted secrets, passwords, and API keys
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# =========================================================================
+# 2. LOCAL TERRAFORM WORKING DIRECTORY & BINARIES
+# =========================================================================
+# Contains downloaded provider plugins (can be hundreds of MBs)
+.terraform/
+.terraform.lock.hcl
+
+# Plan files (can contain unencrypted plan data)
+*.tfplan
+
+# =========================================================================
+# 3. ENVIRONMENT & CREDENTIAL FILES
+# =========================================================================
+# Local cloud credentials and environment variable files
+.env
+*.pem
+*.key
+aws_credentials
+credentials.json
+
+# =========================================================================
+# 4. LOGS & TEMPORARY FILES
+# =========================================================================
+# PowerShell transcripts, execution logs, and crash reports
+*.log
+crash.log
+crash.*.log
+terraform-deployment.log
+
+# =========================================================================
+# 5. OS & IDE SYSTEM FILES
+# =========================================================================
+# Mac OS / Windows system metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# VS Code & JetBrains IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo

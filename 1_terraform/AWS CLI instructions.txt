@@ -1,0 +1,29 @@
+1. Install AWS CLI
+
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+2. Power Shell
+
+cd folder
+New-Item -Name "main.tf" -ItemType "file"
+
+3. Configure AWS (Access Key and Secret Key)
+aws configure
+
+
+Useful commands:
+
+Power Shell - Clear-Host
+Start-Transcript -Path ".\terraform-depl-logs.log"
+
+
+4. Terraform flow
+
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+
+Stop-Transcript
+
+Get-Content .\terraform-depl.log -Tail 20
