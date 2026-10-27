@@ -1,6 +1,6 @@
 FROM python:3.14-slim
 
-# The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile
+# The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile-singlestage
 # this will create /app directory in Docker image
 WORKDIR /app
 

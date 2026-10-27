@@ -1,0 +1,22 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app/
+
+RUN groupadd -r webservice && useradd --no-log-init -r -g webservice webservice
+RUN chown -R webservice:webservice /app
+USER webservice:webservice
+
+EXPOSE 8050
+CMD ["python", "GraphAnalysis.py", "obj_dependency_data.csv"]
+
+
+# Layer 1 (FROM) - downloaded once, cached forever
+# Layer 2 (COPY) - cached unless I change the package requirements
+# Layer 3 (RUN) - skipped on rebuilds if requirements.txt not changed
+# Layer 4 (COPY) - only this layer rebuilds
